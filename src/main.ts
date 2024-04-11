@@ -1,13 +1,13 @@
-import { myMp, print } from "kolmafia";
+import {equip_items, prep_items} from "./break_chores"
+import {get_meat} from "./meat_gen"
+import {spend_research} from "./skill_path"
+import {get_stuff} from "./stuff_gen"
 
-export function checkMP(): string {
-  if (myMp() < 200) {
-    return "Your MP is less than 200.";
-  } else {
-    return "Your MP is greater than or equal to 200.";
-  }
-}
 
 export function main(): void {
-  print(checkMP());
+  get_meat();
+  get_stuff();
+  equip_items();
+  prep_items();
+  spend_research();
 }
