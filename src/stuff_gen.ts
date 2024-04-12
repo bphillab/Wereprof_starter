@@ -1,4 +1,4 @@
-import {buy, takeStorage, toItem, toSkill, use} from "kolmafia";
+import {buy, hermit, Skill, takeStorage, toItem, toSkill, use, visitUrl} from "kolmafia";
 
 function get_general_store(): void {
     const area_unlockers = ["Desert bus Pass", "Hermit Permit"];
@@ -11,35 +11,69 @@ function get_general_store(): void {
     }
 }
 
-function buy_desert_skill(sk:string): void {
-    skill_to_buy = toSkill(sk);
-    //buy(skill_to_buy);
+function buy_desert_skill(sk: Skill): void {
+    switch (sk)
+    {
+        case toSkill("Powers of Observatiogn"): {
+        visitUrl("gnomes.php?action=trainskill&whichskill=10");
+        break;
+        }
+
+        case toSkill("Gnefarious Pickpocketing"): {
+            visitUrl("gnomes.php?action=trainskill&whichskill=11");
+            break;
+        }
+
+        case toSkill("Torso Awareness"): {
+            visitUrl("gnomes.php?action=trainskill&whichskill=12");
+            break;
+        }
+
+        case toSkill("Gnomish Hardigness "): {
+            visitUrl("gnomes.php?action=trainskill&whichskill=13");
+            break;
+        }
+
+        case toSkill("Cosmic Ugnderstanding"): {
+            visitUrl("gnomes.php?action=trainskill&whichskill=14");
+            break;
+        }
+
+        default: {
+            console.log("Unrecognized skills");
+            break;
+        }
+    }
+
     return;
 }
 
 function get_desert_items(): void {
-    const skills_to_buy = ["torso awareness", "Powers of Observatiogn"];
-    //const items_to_buy = [];
-    for (const sk of skills_to_buy) {
-        buy_desert_skill(sk);
+    const skills_to_buy = ["Torso Awareness", "Powers of Observatiogn"];
+    const items_to_buy: string[] = ["vial of Gnomochloric acid"];
+    for (const sk of skills_to_buy){
+        buy_desert_skill(toSkill(sk));
     }
-    /*
-    for (it of items_to_buy){
+    for (const it of items_to_buy){
         buy(toItem(it));
     }
-    */
-    return
+    return;
 }
 
 function pull_items(): void {
-    const food_to_pull = ["Calzone of Legend", "plain calzone", "dieting pill"];
-    for (const i in food_to_pull){
+    const food_to_pull = ["Calzone of Legend", "plain calzone"];
+    const spleen_to_pull = ["dieting pill"];
+    const other_to_pull = ["spice melange", "moss mantle"];
+    const all_to_pull = [... food_to_pull, ...spleen_to_pull, ...other_to_pull]
+    for (const i in all_to_pull) {
         takeStorage(1, toItem(i));
     }
+    return;
 }
 
 function get_clovers(): void{
-    // get clover from hermit
+    hermit(3, toItem("11-leaf clover"));
+    return;
 }
 
 export function get_stuff(): void {
