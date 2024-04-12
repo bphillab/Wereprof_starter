@@ -64,7 +64,7 @@ function pull_items(): void {
     const food_to_pull = ["Calzone of Legend", "plain calzone"];
     const spleen_to_pull = ["dieting pill"];
     const other_to_pull = ["spice melange", "moss mantle"];
-    const things_to_pull:string[]  = [... food_to_pull, ...spleen_to_pull, ...other_to_pull]
+    const things_to_pull = [... food_to_pull, ...spleen_to_pull, ...other_to_pull]
     //Fix this in a refactor!
     for (const i of things_to_pull) {
         takeStorage(1, toItem(i));
