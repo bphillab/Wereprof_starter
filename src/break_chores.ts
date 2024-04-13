@@ -78,7 +78,7 @@ export function equip_items(): void {
     equip(toSlot("acc2"), toItem("astral belt"));
     equip(toSlot("acc3"), toItem("spring shoes"));
     useFamiliar(toFamiliar("Gelatinous Cubeling"));
-    equip(toItem("tiny still suit"));
+    equip(toItem("tiny stillsuit"));
     return;
 }
 
