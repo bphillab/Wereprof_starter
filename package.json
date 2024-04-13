@@ -2,7 +2,7 @@
   "name": "Wereprof-Start",
   "version": "1.0.0",
   "description": "Package to kick off a wereprof ascension",
-  "main": "KoLmafia/scripts/kol-js-starter/main-script-name.js",
+  "main": "KoLmafia/scripts/kol-js-starter/wereprof-kickoff.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "yarn run build:types && yarn run build:js",
