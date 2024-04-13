@@ -1,6 +1,6 @@
 import {autosell, itemAmount, takeStorage, toItem} from "kolmafia";
 
-export function autosell_for_meat(): void {
+function autosell_for_meat(): void {
     const pull_to_sell = ["Facsimile Dictionary"];
     const items_to_sell = ["Facsimile Dictionary", "Baconstone", "Hamethyst"];
     for(const it of pull_to_sell)
