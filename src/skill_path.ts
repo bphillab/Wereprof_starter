@@ -16,7 +16,9 @@ function map_research_goal(goal:string): string[]{
     const big_path:string[] = []
     if (goal in caps) {
         big_path.unshift(goal)
-        big_path.unshift(caps[goal].concat("1"))
+        for (let i = 0; i < numlevels; i++)
+            big_path.unshift(caps[goal].concat((numlevels-i).toString()))
+
     }
     else {
         big_path.unshift(goal)
