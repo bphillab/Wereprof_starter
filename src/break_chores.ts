@@ -74,7 +74,7 @@ export function equip_items(): void {
     equip(toItem("Jurassic Parka"));
     equip(toItem("June Cleaver"));
     equip(toItem("Cursed magnifying glass"));
-    equip(toSlot("acc1"), toItem("Everfull"));
+    equip(toSlot("acc1"), toItem("Everfull Dart Holster"));
     equip(toSlot("acc2"), toItem("astral belt"));
     equip(toSlot("acc3"), toItem("spring shoes"));
     useFamiliar(toFamiliar("Gelatinous Cubeling"));

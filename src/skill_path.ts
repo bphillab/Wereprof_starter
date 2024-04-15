@@ -1,4 +1,5 @@
 import {cliExecute} from "kolmafia";
+import {visitUrl} from "kolmafia";
 
 
 function map_research_goal(goal:string): string[]{
@@ -39,10 +40,10 @@ export function spend_research(): void{
     // Go for stomach/liver for early food. Need plain calzone + dieting pill Legend = 6
     //                               drink. Need some for autumnaton/pool (?)
     //10, 20, 30, 20, 30, 40, 40 x 2 = 190 x 2 = 380
-    let goals = ['stomach1', 'liver1']
+    let goals = ['stomach1']
     // Go for experience [mys -> ML; mox -> init, meat -> flat exp]
     // 10,20,30,20,30,40,40,50,60, 100 -> 700
-    goals = goals.concat(['ml3', 'meat3'])
+    goals = goals.concat(['ml3','perfecthair'])
     // Go for survivability [get kick, rend (upgrade?), Damage Res]
     goals = goals.concat(['kick2', 'rend1'])
     for (const i of goals ){
