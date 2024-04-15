@@ -47,7 +47,7 @@ export function spend_research(): void{
     goals = goals.concat(['kick2', 'rend1'])
     for (const i of goals ){
         for (const j of map_research_goal(i))
-            if (j in getProperty("beastSkillsAvailable").split(','))
+            if (getProperty("beastSkillsAvailable").split(',').indexOf(j) > -1)
                 cliExecute("wereprofessor research ".concat(j));
     }
     return
