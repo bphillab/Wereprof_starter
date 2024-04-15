@@ -1,4 +1,4 @@
-import {cliExecute} from "kolmafia";
+import {cliExecute, getProperty} from "kolmafia";
 
 
 function map_research_goal(goal:string): string[]{
@@ -47,7 +47,8 @@ export function spend_research(): void{
     goals = goals.concat(['kick2', 'rend1'])
     for (const i of goals ){
         for (const j of map_research_goal(i))
-            cliExecute("wereprofessor research ".concat(j));
+            if (j in getProperty("beastSkillsAvailable").split(','))
+                cliExecute("wereprofessor research ".concat(j));
     }
     return
 }
