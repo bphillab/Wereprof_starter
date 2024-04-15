@@ -4,7 +4,7 @@ import {cliExecute} from "kolmafia";
 function map_research_goal(goal:string): string[]{
     const parent_nodes: { [key: string]: string } = {
         "mus":"", "rend":"mus", "hp":"mus", "skin":"hp", "stomach":"hp",
-        "mys":"", "bite":"mys", "res":"mys","items":"res","ml":"res",
+        "myst":"", "bite":"myst", "res":"myst","items":"res","ml":"res",
         "mox":"", "kick":"mox","init":"mox","meat":"init", "liver":"init"
     }
     const caps: { [key: string]: string } = {
