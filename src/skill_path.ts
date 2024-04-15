@@ -1,5 +1,4 @@
 import {cliExecute} from "kolmafia";
-import {visitUrl} from "kolmafia";
 
 
 function map_research_goal(goal:string): string[]{
