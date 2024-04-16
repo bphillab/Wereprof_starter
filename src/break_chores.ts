@@ -54,8 +54,6 @@ function start_melvin(): void {
 
 function handle_apriling(): void {
     cliExecute("aprilband effect nc");
-    cliExecute("aprilband item tuba");
-    cliExecute("aprilband item saxophone");
 }
 
 export function prep_items(): void {
