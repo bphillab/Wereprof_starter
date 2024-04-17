@@ -42,9 +42,10 @@ export function spend_research(): void{
     let goals = ['stomach1']
     // Go for experience [mys -> ML; mox -> init, meat -> flat exp]
     // 10,20,30,20,30,40,40,50,60, 100 -> 700
-    goals = goals.concat(['ml3','perfecthair'])
+    goals = goals.concat(['ml3'])
     // Go for survivability [get kick, rend (upgrade?), Damage Res]
-    goals = goals.concat(['kick2', 'rend1'])
+    goals = goals.concat(['kick2'])
+    goals = goals.concat(['hunt'])
     for (const i of goals ){
         for (const j of map_research_goal(i)) {
             if (getProperty("beastSkillsAvailable").split(",").includes(j))

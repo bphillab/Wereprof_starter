@@ -56,6 +56,11 @@ function handle_apriling(): void {
     cliExecute("aprilband effect nc");
 }
 
+function kick_off_pvp(){
+    visitUrl("peevpee.php?action=smashstone&pwd&confirm=on", true);
+    visitUrl("peevpee.php?place=fight");
+}
+
 export function prep_items(): void {
     AutumnAton.sendTo(toLocation("Haunted Pantry"), true);
     get_muffin(toItem("Blueberry Muffin"));
@@ -63,6 +68,7 @@ export function prep_items(): void {
     handle_apriling();
     start_melvin();
     changeMcd(5);
+    kick_off_pvp();
     return;
 }
 
