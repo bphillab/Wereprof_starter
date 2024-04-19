@@ -1,13 +1,12 @@
-import { AutumnAton} from "libram"
+import {AprilingBandHelmet, AutumnAton} from "libram"
 import {
+    availableAmount,
     changeMcd,
-    cliExecute,
     equip,
     Item,
     runChoice,
     toFamiliar,
-    toItem,
-    toLocation,
+    toItem, toLocation,
     toSlot,
     use, useFamiliar,
     visitUrl
@@ -53,7 +52,10 @@ function start_melvin(): void {
 }
 
 function handle_apriling(): void {
-    cliExecute("aprilband effect nc");
+    AprilingBandHelmet.changeSong("Patrol Beat")
+    AprilingBandHelmet.joinSection("Apriling band saxophone")
+    AprilingBandHelmet.joinSection("Apriling band tuba")
+    return;
 }
 
 function kick_off_pvp(){
@@ -62,8 +64,9 @@ function kick_off_pvp(){
 }
 
 export function prep_items(): void {
-    AutumnAton.sendTo(toLocation("Haunted Pantry"), true);
-    get_muffin(toItem("Blueberry Muffin"));
+    if (availableAmount(toItem('earthenware muffin tin')) >0)
+        get_muffin(toItem("Blueberry Muffin"));
+    AutumnAton.sendTo(toLocation("noob cave"))
     start_SIT_course();
     handle_apriling();
     start_melvin();
@@ -74,7 +77,6 @@ export function prep_items(): void {
 
 export function equip_items(): void {
     equip(toItem("Apriling band helmet"));
-    equip(toItem("moss mantle"));
     equip(toItem("Jurassic Parka"));
     equip(toItem("June Cleaver"));
     equip(toItem("Cursed magnifying glass"));
