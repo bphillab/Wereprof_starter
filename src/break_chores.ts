@@ -1,7 +1,7 @@
-import {AprilingBandHelmet, AutumnAton} from "libram"
+import { AutumnAton} from "libram"
 import {
     availableAmount,
-    changeMcd,
+    changeMcd, cliExecute,
     equip,
     Item,
     runChoice,
@@ -15,24 +15,26 @@ import {
 function get_muffin(muffin:Item): void{
     visitUrl("place.php?whichplace=monorail&action=monorail_downtown");
     runChoice(7); // Go Downtown
-    switch(muffin){
-        case toItem("Blueberry Muffin"): {
-            runChoice(1);
-            break;
-        }
+    if (availableAmount(toItem("Earthenware Muffin Tin") ) > 0) {
+        switch (muffin) {
+            case toItem("Blueberry Muffin"): {
+                runChoice(1);
+                break;
+            }
 
-        case toItem("Bran Muffin"): {
-            runChoice(2);
-            break;
-        }
+            case toItem("Bran Muffin"): {
+                runChoice(2);
+                break;
+            }
 
-        case toItem("chocolate chip muffin"): {
-            runChoice(3);
-            break;
-        }
+            case toItem("chocolate chip muffin"): {
+                runChoice(3);
+                break;
+            }
 
-        default:
-            console.log("Unrecognized Muffin");
+            default:
+                console.log("Unrecognized Muffin");
+        }
     }
     runChoice(1); //Return to prior screen
     runChoice(8); //Nevermind
@@ -52,9 +54,9 @@ function start_melvin(): void {
 }
 
 function handle_apriling(): void {
-    AprilingBandHelmet.changeSong("Patrol Beat")
-    AprilingBandHelmet.joinSection("Apriling band saxophone")
-    AprilingBandHelmet.joinSection("Apriling band tuba")
+    cliExecute("aprilband effect nc");
+    cliExecute("aprilband item tuba");
+    cliExecute("aprilband item saxophone");
     return;
 }
 
@@ -64,8 +66,7 @@ function kick_off_pvp(){
 }
 
 export function prep_items(): void {
-    if (availableAmount(toItem('earthenware muffin tin')) >0)
-        get_muffin(toItem("Blueberry Muffin"));
+    get_muffin(toItem("Blueberry Muffin"));
     AutumnAton.sendTo(toLocation("noob cave"))
     start_SIT_course();
     handle_apriling();
