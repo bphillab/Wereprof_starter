@@ -45,7 +45,6 @@ export function spend_research(): void{
     goals = goals.concat(['ml3', 'skin3'])
     // Go for survivability [get kick, rend (upgrade?), Damage Res]
     goals = goals.concat(['kick2'])
-    goals = goals.concat(['hunt'])
     for (const i of goals ){
         for (const j of map_research_goal(i)) {
             if (getProperty("beastSkillsAvailable").split(",").includes(j))
