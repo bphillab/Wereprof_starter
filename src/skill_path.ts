@@ -1,6 +1,5 @@
 import {cliExecute, getProperty} from "kolmafia";
 
-
 function map_research_goal(goal:string): string[]{
     const parent_nodes: { [key: string]: string } = {
         "mus":"", "rend":"mus", "hp":"mus", "skin":"hp", "stomach":"hp",
@@ -22,7 +21,7 @@ function map_research_goal(goal:string): string[]{
     }
     else {
         big_path.unshift(goal)
-        for (let i=1; i < parseInt(goal.slice(-1)); i++)
+        for (let i= parseInt(goal.slice(-1))-1; i >= 1; i--)
             big_path.unshift(goal.slice(0,-1).concat(i.toString()));
     }
     while (big_path[0].slice(0,-1) !== ""){
@@ -37,7 +36,7 @@ function map_research_goal(goal:string): string[]{
 
 export function spend_research(): void{
     // Go for stomach/liver for early food. Need plain calzone + dieting pill Legend = 6
-    //                               drink. Need some for autumnaton/pool (?)
+    //                               drink.
     //10, 20, 30, 20, 30, 40, 40 x 2 = 190 x 2 = 380
     let goals = ['stomach3', 'liver3']
     // Go for experience [mys -> ML; mox -> init, meat -> flat exp]
