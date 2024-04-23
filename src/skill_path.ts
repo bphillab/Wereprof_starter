@@ -1,4 +1,4 @@
-import {cliExecute, getProperty} from "kolmafia";
+import {cliExecute} from "kolmafia";
 
 function map_research_goal(goal:string): string[]{
     const parent_nodes: { [key: string]: string } = {
@@ -46,8 +46,7 @@ export function spend_research(): void{
     goals = goals.concat(['kick2'])
     for (const i of goals ){
         for (const j of map_research_goal(i)) {
-            if (getProperty("beastSkillsAvailable").split(",").includes(j))
-                cliExecute("wereprofessor research ".concat(j));
+            cliExecute("wereprofessor research ".concat(j));
         }
     }
     return
