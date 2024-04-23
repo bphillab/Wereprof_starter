@@ -39,7 +39,7 @@ export function spend_research(): void{
     // Go for stomach/liver for early food. Need plain calzone + dieting pill Legend = 6
     //                               drink. Need some for autumnaton/pool (?)
     //10, 20, 30, 20, 30, 40, 40 x 2 = 190 x 2 = 380
-    let goals = ['stomach1']
+    let goals = ['stomach3', 'liver3']
     // Go for experience [mys -> ML; mox -> init, meat -> flat exp]
     // 10,20,30,20,30,40,40,50,60, 100 -> 700
     goals = goals.concat(['ml3', 'skin3'])
