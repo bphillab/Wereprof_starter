@@ -91,7 +91,7 @@ export function equip_items(): void {
     equip(toSlot("acc1"), toItem("Everfull Dart Holster"));
     equip(toSlot("acc2"), toItem("astral belt"));
     equip(toSlot("acc3"), toItem("spring shoes"));
-    useFamiliar(toFamiliar("Gelatinous Cubeling"));
+    useFamiliar(toFamiliar("Cookbookbat"));
     equip(toItem("tiny stillsuit"));
     return;
 }
