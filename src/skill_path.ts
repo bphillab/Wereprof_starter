@@ -43,7 +43,7 @@ export function spend_research(): void{
     // 10,20,30,20,30,40,40,50,60, 100 -> 700
     goals = goals.concat(['ml3', 'skin3'])
     // Go for survivability [get kick, rend (upgrade?), Damage Res]
-    goals = goals.concat(['kick2'])
+    goals = goals.concat(['kick2', 'claw2'])
     for (const i of goals ){
         for (const j of map_research_goal(i)) {
             cliExecute("wereprofessor research ".concat(j));

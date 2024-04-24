@@ -1,10 +1,10 @@
-import { AutumnAton} from "libram"
+import {AutumnAton} from "libram"
 import {
-    availableAmount,
+    availableAmount, buy,
     changeMcd, cliExecute,
     equip,
     Item,
-    runChoice,
+    runChoice, toCoinmaster,
     toFamiliar,
     toItem, toLocation,
     toSlot,
@@ -60,6 +60,12 @@ function handle_apriling(): void {
     return;
 }
 
+function get_catalog_items(): void {
+    buy(toCoinmaster("Mr. Store 2002"), 1, toItem("Loathing Idol Microphone"));
+    buy(toCoinmaster("Mr. Store 2002"), 1, toItem("Flash Liquidizer Ultra Dousing Accessory"));
+    buy(toCoinmaster("Mr. Store 2002"), 1, toItem("pro skateboard"));
+}
+
 function kick_off_pvp(){
     visitUrl("peevpee.php?action=smashstone&pwd&confirm=on", true);
     visitUrl("peevpee.php?place=fight");
@@ -70,6 +76,7 @@ export function prep_items(): void {
     AutumnAton.sendTo(toLocation("noob cave"))
     start_SIT_course();
     handle_apriling();
+    get_catalog_items();
     start_melvin();
     changeMcd(5);
     kick_off_pvp();
