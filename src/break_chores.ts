@@ -47,12 +47,6 @@ function start_SIT_course(): void {
     return
 }
 
-function start_melvin(): void {
-    equip(toItem("Jurassic Parka"));
-    use(toItem("Letter for Melvign the Gnome"));
-    return;
-}
-
 function handle_apriling(use_sax = true): void {
     cliExecute("aprilband effect nc");
     cliExecute("aprilband item tuba");
@@ -92,7 +86,6 @@ export function prep_items(): void {
     start_SIT_course();
     handle_apriling(false);
     get_catalog_items();
-    start_melvin();
     changeMcd(5);
     kick_off_pvp();
     return;
