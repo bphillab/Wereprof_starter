@@ -45,9 +45,10 @@ export function spend_research(): void{
     goals = goals.concat(['ml3', 'skin3'])
     // Go for survivability [get kick, rend (upgrade?), Damage Res]
     //20 + 30 -> 50 x 2 = 100
-    goals = goals.concat(['kick2', 'claw2'])
+    goals = goals.concat(['kick2', 'rend2'])
     // 600 + 450 + 100 = 1150
     // Consider whether buffing item/meat drop is worth the difficulty?
+    // 1 skin + 1 claw -> 2 meat/item
     for (const i of goals ){
         for (const j of map_research_goal(i)) {
             cliExecute("wereprofessor research ".concat(j));
