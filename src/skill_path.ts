@@ -37,13 +37,17 @@ function map_research_goal(goal:string): string[]{
 export function spend_research(): void{
     // Go for stomach/liver for early food. Need plain calzone + dieting pill Legend = 6
     //                               drink.
-    //10, 20, 30, 20, 30, 40, 40 x 2 = 190 x 2 = 380
+    //10, 20, 30, 20, 30, 40, 40, 50, 60 -> 300 x 2 = 600
     let goals = ['stomach3', 'liver3']
     // Go for experience [mys -> ML; mox -> init, meat -> flat exp]
-    // 10,20,30,20,30,40,40,50,60, 100 -> 700
+    // 10,20,30,20,30,40,40,50,60 -> 300
+    // 40,50,60 -> 90 + 150 = 150 + 300 = 450
     goals = goals.concat(['ml3', 'skin3'])
     // Go for survivability [get kick, rend (upgrade?), Damage Res]
+    //20 + 30 -> 50 x 2 = 100
     goals = goals.concat(['kick2', 'claw2'])
+    // 600 + 450 + 100 = 1150
+    // Consider whether buffing item/meat drop is worth the difficulty?
     for (const i of goals ){
         for (const j of map_research_goal(i)) {
             cliExecute("wereprofessor research ".concat(j));
