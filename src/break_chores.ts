@@ -64,9 +64,10 @@ function handle_apriling(use_sax = true): void {
 }
 
 function get_catalog_items(): void {
-    buy(toCoinmaster("Mr. Store 2002"), 1, toItem("Loathing Idol Microphone"));
+    buy(toCoinmaster("Mr. Store 2002"), 1, toItem("Amulet of Perpetual Darkness"));
     buy(toCoinmaster("Mr. Store 2002"), 1, toItem("Flash Liquidizer Ultra Dousing Accessory"));
     buy(toCoinmaster("Mr. Store 2002"), 1, toItem("pro skateboard"));
+    return;
 }
 
 function kick_off_pvp(){
