@@ -62,9 +62,21 @@ function get_desert_items(): void {
 
 function pull_items(): void {
     //Foods Needed for first wolf
-    const things_to_pull = ["Calzone of Legend", "plain calzone"];
-    //Spleen needed to support first wolf
-    things_to_pull.push("dieting pill");
+    const things_to_pull = ["Calzone of Legend", "plain calzone", "dieting pill"];
+
+    //Needed for Chasm
+    things_to_pull.push("Smut Orc Keepsake Box")
+    // Lvl 11
+    things_to_pull.push("blackberry galoshes")
+    //Hidden City
+    things_to_pull.push("Spooky-Gro fertilizer")
+    things_to_pull.push("Muculent Machete")
+    things_to_pull.push("book of matches")
+    //Palindome
+    things_to_pull.push("wet stew")
+    //Lvl 12
+    things_to_pull.push("Shore Inc. Ship Trip Scrip")
+
     for (const i of things_to_pull) {
         takeStorage(1, toItem(i));
     }
