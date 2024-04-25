@@ -61,10 +61,10 @@ function get_desert_items(): void {
 }
 
 function pull_items(): void {
-    const food_to_pull = ["Calzone of Legend", "plain calzone"];
-    const spleen_to_pull = ["dieting pill"];
-    const other_to_pull = ["spice melange"];
-    const things_to_pull = [... food_to_pull, ...spleen_to_pull, ...other_to_pull]
+    //Foods Needed for first wolf
+    const things_to_pull = ["Calzone of Legend", "plain calzone"];
+    //Spleen needed to support first wolf
+    things_to_pull.push("dieting pill");
     for (const i of things_to_pull) {
         takeStorage(1, toItem(i));
     }
