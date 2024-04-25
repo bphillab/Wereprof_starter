@@ -53,10 +53,13 @@ function start_melvin(): void {
     return;
 }
 
-function handle_apriling(): void {
+function handle_apriling(use_sax = true): void {
     cliExecute("aprilband effect nc");
     cliExecute("aprilband item tuba");
-    cliExecute("aprilband item saxophone");
+    if(use_sax)
+        cliExecute("aprilband item saxophone");
+    else
+        cliExecute("aprilband item piccolo");
     return;
 }
 
@@ -71,11 +74,22 @@ function kick_off_pvp(){
     visitUrl("peevpee.php?place=fight");
 }
 
+function send_autumnaton():void {
+    // First two excursions are 11 so need low underground by send 2
+    // Mid indoor is haunted library which would also work
+    // Therefore want to not send to noob cave first
+    // Options haunted pantry:   1 Ale, +1 item
+    //         Sleazy backalley: autumn leaf, +2 stat gain/turn
+    // Not worrying about stats would point to pantry!
+    //
+    AutumnAton.sendTo(toLocation("haunted pantry"))
+}
+
 export function prep_items(): void {
     get_muffin(toItem("Blueberry Muffin"));
-    AutumnAton.sendTo(toLocation("noob cave"))
+    send_autumnaton();
     start_SIT_course();
-    handle_apriling();
+    handle_apriling(false);
     get_catalog_items();
     start_melvin();
     changeMcd(5);
@@ -91,7 +105,7 @@ export function equip_items(): void {
     equip(toSlot("acc1"), toItem("Everfull Dart Holster"));
     equip(toSlot("acc2"), toItem("astral belt"));
     equip(toSlot("acc3"), toItem("spring shoes"));
-    useFamiliar(toFamiliar("Cookbookbat"));
+    useFamiliar(toFamiliar("Grey Goose"));
     equip(toItem("tiny stillsuit"));
     return;
 }
