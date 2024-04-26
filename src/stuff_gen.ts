@@ -66,6 +66,7 @@ function pull_items(): void {
 
     //Needed for Chasm
     things_to_pull.push("Smut Orc Keepsake Box")
+    things_to_pull.push("Rusty Hedge Trimmers")
     // Lvl 11
     things_to_pull.push("blackberry galoshes")
     //Hidden City

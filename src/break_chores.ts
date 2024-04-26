@@ -2,7 +2,7 @@ import {AutumnAton} from "libram"
 import {
     availableAmount, buy,
     changeMcd, cliExecute,
-    equip,
+    equip, equippedItem,
     Item,
     runChoice, toCoinmaster,
     toFamiliar,
@@ -83,11 +83,36 @@ function send_autumnaton():void {
     AutumnAton.sendTo(toLocation("haunted pantry"))
 }
 
+function mayday_package(use_pack=false): void {
+    // Usually not since no need, but consider for optimal prof turns
+    if(use_pack)
+        use(toItem("MayDay™ supply package"))
+    return
+}
+
+function lyle(visit=false, with_cc=false ): void {
+    // Usually not since no need, but consider for optimal prof turns
+    const old_weapon = equippedItem(toSlot("weapon"));
+    if ( with_cc )
+        equip(toItem("Candy cane sword cane"));
+
+
+    if( visit )
+        use(toItem("MayDay™ supply package"));
+
+    equip(old_weapon);
+
+    return
+}
+
+
 export function prep_items(): void {
     get_muffin(toItem("Blueberry Muffin"));
     send_autumnaton();
     start_SIT_course();
     handle_apriling(false);
+    mayday_package(true);
+    lyle(true, true);
     get_catalog_items();
     changeMcd(5);
     kick_off_pvp();
