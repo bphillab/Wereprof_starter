@@ -67,6 +67,9 @@ function get_catalog_items(): void {
 function kick_off_pvp(){
     visitUrl("peevpee.php?action=smashstone&pwd&confirm=on", true);
     visitUrl("peevpee.php?place=fight");
+    use(toItem("Cursed Microwave"));
+    use(toItem("cursed pony keg"));
+    return;
 }
 
 function send_autumnaton():void {
