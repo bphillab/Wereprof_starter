@@ -95,14 +95,10 @@ function lyle(visit=false, with_cc=false ): void {
     const old_weapon = equippedItem(toSlot("weapon"));
     if ( with_cc )
         equip(toItem("Candy cane sword cane"));
-
-
     if( visit )
-        use(toItem("MayDay™ supply package"));
-
+        visitUrl("place.php?whichplace=monorail&action=monorail_lyle");
     equip(old_weapon);
-
-    return
+    return;
 }
 
 
