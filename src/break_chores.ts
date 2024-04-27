@@ -83,13 +83,6 @@ function send_autumnaton():void {
     AutumnAton.sendTo(toLocation("haunted pantry"))
 }
 
-function mayday_package(use_pack=false): void {
-    // Usually not since no need, but consider for optimal prof turns
-    if(use_pack)
-        use(toItem("MayDay™ supply package"))
-    return
-}
-
 function lyle(visit=false, with_cc=false ): void {
     // Usually not since no need, but consider for optimal prof turns
     const old_weapon = equippedItem(toSlot("weapon"));
@@ -107,7 +100,6 @@ export function prep_items(): void {
     send_autumnaton();
     start_SIT_course();
     handle_apriling(false);
-    mayday_package(true);
     lyle(true, true);
     get_catalog_items();
     changeMcd(5);
