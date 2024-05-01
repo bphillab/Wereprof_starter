@@ -3,7 +3,7 @@ import {
     availableAmount, buy,
     changeMcd, cliExecute,
     equip, equippedItem,
-    Item,
+    Item, itemAmount,
     runChoice, toCoinmaster,
     toFamiliar,
     toItem, toLocation,
@@ -119,6 +119,9 @@ export function equip_items(): void {
     equip(toItem("tiny stillsuit"));
     useFamiliar(toFamiliar("Grey Goose"));
     equip(toItem("Grey Down Vest"));
+    if (itemAmount(toItem("Piccolo")) > 0)
+        for (let i = 0; i < 3; i++)
+            cliExecute("aprilband play piccolo")
     return;
 }
 
