@@ -114,9 +114,11 @@ export function equip_items(): void {
     equip(toItem("Cursed magnifying glass"));
     equip(toSlot("acc1"), toItem("Everfull Dart Holster"));
     equip(toSlot("acc2"), toItem("astral belt"));
-    equip(toSlot("acc3"), toItem("spring shoes"));
-    useFamiliar(toFamiliar("Grey Goose"));
+    equip(toSlot("acc3"), toItem("teacher's pen"));
+    useFamiliar(toFamiliar("Chest Mimic"));
     equip(toItem("tiny stillsuit"));
+    useFamiliar(toFamiliar("Grey Goose"));
+    equip(toItem("Grey Down Vest"));
     return;
 }
 

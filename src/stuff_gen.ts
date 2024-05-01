@@ -62,13 +62,16 @@ function get_desert_items(): void {
 
 function pull_items(): void {
     //Foods Needed for first wolf
-    const things_to_pull = ["Calzone of Legend", "plain calzone", "dieting pill"];
-
+    const things_to_pull = ["Roasted Vegetable Focaccia", "plain calzone"];
+    //Handle leveling fams
+    things_to_pull.push("grey down vest")
+    things_to_pull.push("teacher's pen")
     //Needed for Chasm
     things_to_pull.push("Smut Orc Keepsake Box")
     things_to_pull.push("Rusty Hedge Trimmers")
     // Lvl 11
     things_to_pull.push("blackberry galoshes")
+    things_to_pull.push("bowling ball")
     //Hidden City
     things_to_pull.push("Spooky-Gro fertilizer")
     things_to_pull.push("Muculent Machete")
