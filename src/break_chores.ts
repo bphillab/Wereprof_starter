@@ -3,7 +3,7 @@ import {
     availableAmount, buy,
     changeMcd, cliExecute,
     equip, equippedItem,
-    Item, itemAmount,
+    Item,
     runChoice, toCoinmaster,
     toFamiliar,
     toItem, toLocation,
@@ -52,8 +52,11 @@ function handle_apriling(use_sax = true): void {
     cliExecute("aprilband item tuba");
     if(use_sax)
         cliExecute("aprilband item saxophone");
-    else
+    else {
         cliExecute("aprilband item piccolo");
+        for (let i = 0; i < 3; i++)
+            cliExecute("aprilband play piccolo")
+    }
     return;
 }
 
@@ -94,19 +97,6 @@ function lyle(visit=false, with_cc=false ): void {
     return;
 }
 
-
-export function prep_items(): void {
-    get_muffin(toItem("Blueberry Muffin"));
-    send_autumnaton();
-    start_SIT_course();
-    handle_apriling(false);
-    lyle(true, true);
-    get_catalog_items();
-    changeMcd(5);
-    kick_off_pvp();
-    return;
-}
-
 export function equip_items(): void {
     equip(toItem("Apriling band helmet"));
     equip(toItem("Jurassic Parka"));
@@ -119,10 +109,17 @@ export function equip_items(): void {
     equip(toItem("tiny stillsuit"));
     useFamiliar(toFamiliar("Grey Goose"));
     equip(toItem("Grey Down Vest"));
-    if (itemAmount(toItem("Piccolo")) > 0)
-        for (let i = 0; i < 3; i++)
-            cliExecute("aprilband play piccolo")
     return;
 }
 
-
+export function prep_items(): void {
+    get_muffin(toItem("Blueberry Muffin"));
+    send_autumnaton();
+    start_SIT_course();
+    handle_apriling(false);
+    lyle(true, true);
+    get_catalog_items();
+    changeMcd(5);
+    kick_off_pvp();
+    return;
+}
